@@ -1,0 +1,11 @@
+// default config
+{
+  "compilerOptions": {
+    "target": "ES2022", 
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
