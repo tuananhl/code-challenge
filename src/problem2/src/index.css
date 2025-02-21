@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-black-00: #163300;
+  --color-gray-neutral-78: rgba(22,51,0,.078);
+  --color-primary-00: #65977a;
+
+  --animate-spinner: spinner 0.8s linear infinite;
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+@layer {
+  .input-control {
+    @apply px-5 py-3 rounded-xl w-full;
+    box-shadow: inset 0 0 0 1px var(--color-black-00);
+    &.error {
+      box-shadow: inset 0 0 0 1px var(--color-red-500);
+    }
+    &:hover {
+      box-shadow: inset 0 0 0 1px var(--color-primary-00);
+    }
+    &:focus, &:focus-visible {
+      box-shadow: inset 0 0 0 1px var(--color-primary-00);
+      outline: none;
+    }
+  }
+  .input-price {
+    @apply px-5 py-4 text-xl font-medium leading-normal focus:outline-0;
+  }
+  
+}
+
+body {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+body > #root {
+  width: 100%;
+  height: 100%;
+  overflow: overlay;
+  height: 100svh;
+}
+
+
+.swap-form-wrapper {
+  box-shadow: 0 10px 32px 0 rgba(0,0,0,.15),0 40px 40px 0 rgba(0,0,0,.04);
+}
+
+.swap-form-input {
+  box-shadow: inset 0 0 0 1px var(--color-black-00);
+  &.error {
+    box-shadow: inset 0 0 0 1px var(--color-red-500);
+  }
+  &:hover {
+    box-shadow: inset 0 0 0 1px var(--color-primary-00);
+  }
+  &:has(>input:focus) {
+    box-shadow: inset 0 0 0 1px var(--color-primary-00);
+  }
+}
